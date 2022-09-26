@@ -1,6 +1,55 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-function Pizze({img,prezzo,nome,ingredienti}) {
+function Pizze({max,img,prezzo,nome,ingredienti}) {
+
+    const [count,setCount] = useState(0);
+    const [message,setMessage] = useState("");
+
+    const incrementa = () => {
+
+        if(count >= max) {
+
+            setCount(max);
+            setMessage("Raggiunto il max degli ordini");
+            setTimeout( function() { setMessage("")},3000)
+
+        } else {
+
+            setCount(count + 1);
+        }
+
+       
+    }
+
+    const decrementa = () => {
+
+        if(count === 0) {
+
+            setCount(0);
+
+        } else {
+  
+            
+            setCount(count - 1);
+        }
+
+    }
+
+    const ordina = () => {
+
+        if(count === 0) {
+
+            setMessage("*Devi inserire un'ordine");
+            setTimeout( function() { setMessage("")},3000)
+
+        } else {
+   
+            setMessage("Ordine aggiunto");
+            setTimeout( function() { setMessage("")},3000)
+
+        }
+    }
+
   return (
     <div className="col">
        <div className="card" style={{width: "400px",textAlign:'center'}}>
@@ -9,8 +58,14 @@ function Pizze({img,prezzo,nome,ingredienti}) {
           <h5 className="card-title">{nome}</h5>
           <p className="card-text fs-6">{ingredienti}</p>
           <p className="card-text">{prezzo} €</p>
-          <button  className="btn btn-outline-danger">Aggiungi</button>
-          
+          <p className="card-text">{count}</p>
+         
+           <button  onClick={incrementa} className="btn btn-outline-danger">+</button>
+           <button  onClick={decrementa} className="btn btn-outline-danger">-</button>
+           <button  onClick={() => setCount(0)} className="btn btn-outline-danger">Reset</button>
+           <br />
+           <button  onClick={ordina} className="btn btn-outline-danger">Ordina</button>
+           <p className="card-text text-danger">{message}</p>
          
          
         </div>
