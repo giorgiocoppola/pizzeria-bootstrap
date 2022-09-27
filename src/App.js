@@ -1,28 +1,15 @@
-
-import './App.css';
-import Header from './component/Header';
-import Pizze from './component/Pizze';
-import pizze from './minicomponent/pizze'
-
+import React from 'react'
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom'
+import Home from './component/Home'
+import Accedi from './component/Accedi'
 
 function App() {
-  return (
-    <div className="App">
-      <Header />
-      <h1 className='text-center text-danger'>Cosa desideri ordinare?</h1>
-      <hr />
-
-      <div className='row'>    
-          {
-            pizze.map((pizza) =>{
-            return <Pizze key={pizza.id} {...pizza} />
-            })}
-      </div>
-
-    </div>
-
-    
-  );
+  return <Router >
+           <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/accedi' element={<Accedi />} />
+           </Routes>
+         </Router>  
 }
 
-export default App;
+export default App
