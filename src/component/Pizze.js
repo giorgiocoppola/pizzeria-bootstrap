@@ -55,10 +55,9 @@ function Pizze({max,img,prezzo,nome,ingredienti}) {
        <div className="card" style={{width: "400px",textAlign:'center'}}>
        <img src={img} className="card-img-top" alt={nome} width="400px" height="400px"/>
        <div className="card-body">
-          <h5 className="card-title">{nome}</h5>
-          <p className="card-text fs-6">{ingredienti}</p>
-          <p className="card-text">{prezzo} €</p>
-          <p className="card-text">{count}</p>
+          <h5 className="card-title text-primary fs-4">{nome}</h5>
+          <p className="card-text fs-4">{prezzo} €</p>
+          <p className="card-text fs-4">{count}</p>
          
            <button  onClick={incrementa} className="btn btn-outline-danger">+</button>
            <button  onClick={decrementa} className="btn btn-outline-danger">-</button>
