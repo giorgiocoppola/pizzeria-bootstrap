@@ -11,7 +11,7 @@ function Registrazione() {
                 <span className="navbar-brand mb-0 h1"><Link className="link-light text-decoration-none" to="/">Pizzeria Angolo Rosso</Link></span>
              </div>
           </nav>
-              <h1 className="text-center text-danger fs-1">Accedi</h1>
+              <h1 className="text-center text-danger fs-1">Registrazione</h1>
       
          </div>
     </div>

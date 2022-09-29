@@ -51,7 +51,7 @@ function Pizze({max,img,prezzo,nome,ingredienti}) {
     }
 
   return (
-    <div className="col">
+    <div className="col mb-4">
        <div className="card" style={{width: "400px",textAlign:'center'}}>
        <img src={img} className="card-img-top" alt={nome} width="400px" height="400px"/>
        <div className="card-body">
