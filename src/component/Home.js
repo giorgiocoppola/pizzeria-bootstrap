@@ -9,7 +9,7 @@ function Home() {
   return (
     <div className="App">
       <Header />
-      <h1 className='text-center text-danger'>Cosa desideri ordinare?</h1>
+      <h1 className='text-center text-danger fw-bolder'>Cosa desideri ordinare?</h1>
       <hr />
 
       <div className='row ms-0'>    
