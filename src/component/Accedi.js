@@ -10,12 +10,17 @@ function Accedi() {
     const [message,setMessage] = useState("");
     const [message2,setMessage2] = useState("");
     const [message3,setMessage3] = useState("");
+    const [utenti,setUtenti] = useState([]);
+
+
+
+
 
 
     const handleSubmit = (e) => {
 
         e.preventDefault();
-
+ 
 
     if(email === "" && password === "") {
 
@@ -28,15 +33,14 @@ function Accedi() {
        
         
     } 
+    
 
-    if (email!=="@") {
+    if(!(email === "@")) {
 
-             
-             setEmail(email);
-             setMessage("Devi inserire una @ come email valida");
-             setTimeout( function() { setMessage("")},3000);
-            
-    } 
+        setMessage("Devi inserire la @");
+        setTimeout( function() { setMessage("")},3000);
+    }
+
     
     if(email === "") {
 
@@ -60,6 +64,10 @@ function Accedi() {
    {
    setEmail("");
    setPassword("");
+   setUtenti( [...utenti, { id: utenti.length + 1,
+                  email : email,
+                  password : password 
+             }])
    setMessage3("Messaggio inviato");
    setTimeout( function() { setMessage3("")},3000);
    }
@@ -81,8 +89,10 @@ function Accedi() {
             <form className="border border-info rounded bg-info w-50 mx-auto">
                 <div className="mb-3">
                    <label htmlFor="email" className="form-label fs-4">Email</label>
-                   <input type="email" className="form-control border-info" id="email" value={email} onChange={ (e) => setEmail(e.target.value)} />
+                   <input type="email" className="form-control border-info" id="email" value={email} onChange={ (e) => setEmail(e.target.value) } />
                    <p className="card-text text-center fw-bolder text-danger">{message}</p>
+      
+                 
                 
   
                 </div>

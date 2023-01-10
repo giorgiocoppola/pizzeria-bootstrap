@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import Footer from './Footer'
 
 
@@ -20,6 +20,7 @@ function Registrazione() {
   const [message6,setMessage6] = useState("");
   const [message7,setMessage7] = useState("");
   const [message8,setMessage8] = useState("");
+  const [clienti,setClienti] = useState([]);
 
   const handleSubmit = (e) => {
 
@@ -55,8 +56,17 @@ function Registrazione() {
       setEmail("");
       setPassword("");
       setCheck("");
-      setMessage8("Messaggio inviato");
+      setMessage8("Registrazione effettuata con successo");
       setTimeout( function() { setMessage8("")},3000);
+      setClienti( [...clienti,{ id:clienti.length + 1,
+                          nome : nome,
+                          cognome: cognome,
+                          citta: citta,
+                          datanascita: datanascita,
+                          email: email,
+                          password: password,
+
+                } ])
        
     }
 
@@ -224,7 +234,7 @@ function Registrazione() {
                     <label className="form-check-label text-light fs-6" for="checkbox">
                            Autorizzo il trattamento dei dati personali
                     </label>
-                    <p className="card-text fw-bolder text-danger">{message7}</p>
+                    <p className="card-text fw-bolder text-danger ms-50">{message7}</p>
                 </div>
                </div>
                

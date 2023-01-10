@@ -1,6 +1,6 @@
 
 
-const pizze = [
+ const pizze = [
        {
         id: 1,
         nome :  "Pizza Margherita",
@@ -74,4 +74,4 @@ const pizze = [
        }
 ]
 
-export default pizze
+export default pizze;

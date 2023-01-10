@@ -1,9 +1,27 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
-function Pizze({max,img,prezzo,nome,ingredienti}) {
+
+
+
+
+function Pizze({img,nome,prezzo,max}) {
 
     const [count,setCount] = useState(0);
     const [message,setMessage] = useState("");
+   
+
+
+   useEffect( () =>{
+   
+   if(count > 0 ) {
+
+    console.log(`Aggiungi ${count}  pizze`);
+
+   } } )
+   
+ 
+
+   
 
     const incrementa = () => {
 
@@ -50,6 +68,11 @@ function Pizze({max,img,prezzo,nome,ingredienti}) {
         }
     }
 
+
+   
+
+  
+
   return (
     <div className="col mb-4">
        <div className="card" style={{width: "400px",textAlign:'center'}}>
@@ -59,13 +82,21 @@ function Pizze({max,img,prezzo,nome,ingredienti}) {
           <p className="card-text fs-4">{prezzo} €</p>
           <p className="card-text fs-4">{count}</p>
          
+         <div className="btn-1">
+
            <button  onClick={incrementa} className="btn btn-outline-danger">+</button>
-           <button  onClick={decrementa} className="btn btn-outline-danger">-</button>
-           <button  onClick={() => setCount(0)} className="btn btn-outline-danger">Reset</button>
-           <br />
+           <button  onClick={decrementa} className="btn btn-outline-danger ms-3">-</button>
+           <button  onClick={() => setCount(0)} className="btn btn-outline-danger ms-3">Reset</button>
+
+         </div>
+
+         <div className="btn-2 mt-3">  
+
            <button  onClick={ordina} className="btn btn-outline-danger">Ordina</button>
+           <button   className="btn btn-outline-danger ms-3">Elimina</button>
            <p className="card-text text-danger">{message}</p>
-         
+
+         </div>
          
         </div>
     </div>
