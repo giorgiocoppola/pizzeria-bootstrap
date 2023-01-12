@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 
 
 
-function Pizze({img,nome,prezzo,max}) {
+function Pizze({id,img,nome,prezzo,max, handleDelete}) {    
 
     const [count,setCount] = useState(0);
     const [message,setMessage] = useState("");
@@ -82,6 +82,10 @@ function Pizze({img,nome,prezzo,max}) {
           <p className="card-text fs-4">{prezzo} €</p>
           <p className="card-text fs-4">{count}</p>
          
+         <div className="btn-0 mb-3">
+               <button className='btn btn-outline-danger'>Descrizione</button>
+         </div>
+
          <div className="btn-1">
 
            <button  onClick={incrementa} className="btn btn-outline-danger">+</button>
@@ -93,7 +97,7 @@ function Pizze({img,nome,prezzo,max}) {
          <div className="btn-2 mt-3">  
 
            <button  onClick={ordina} className="btn btn-outline-danger">Ordina</button>
-           <button   className="btn btn-outline-danger ms-3">Elimina</button>
+           <button   className="btn btn-outline-danger ms-3" onClick={()=>handleDelete(id)}>Elimina</button>
            <p className="card-text text-danger">{message}</p>
 
          </div>

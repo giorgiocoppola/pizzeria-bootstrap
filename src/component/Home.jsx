@@ -15,10 +15,10 @@ function Home() {
 
 
 
-  const handleDelete = id => {
+  const handleDelete = id => {   
 
   const newpizze = elencopizze.filter((pizza) => pizza.id !== id);
-  setElencoPizze({newpizze});
+  setElencoPizze(newpizze);
    
     
   } 
@@ -31,8 +31,8 @@ function Home() {
 
       <div className='row ms-0'>    
           {
-            pizze.map((pizza) =>{
-            return <Pizze key={pizza.id} {...pizza} onDelete={handleDelete} />
+            elencopizze.map((pizza) =>{
+            return <Pizze key={pizza.id} {...pizza} handleDelete={handleDelete} />
             })}
       </div>
 
