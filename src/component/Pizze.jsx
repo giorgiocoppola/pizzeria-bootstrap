@@ -6,6 +6,7 @@ import React, { useEffect, useState } from 'react'
 
 
 
+
 function Pizze({id,img,nome,prezzo,max, handleDelete}) {    
 
     const [count,setCount] = useState(0);

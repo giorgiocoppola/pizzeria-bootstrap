@@ -1,29 +1,30 @@
 form {
    
-    width:800px;
-    margin-top:40px;
-    padding: 20px 20px 30px 20px;
+    min-width: 400px;
+    margin:20px 20px;
+  
   
     
 }
 
-.form-control {
-
-    margin:auto;
-
+.accedi {
+        
+   overflow-x: hidden;
 }
 
+@media screen and (max-width:412px) {
+
+    .accedi {
+        
+        height: 786px;
+    }
+  
+  
+  }
 
 
-.form-label {
-    color:white;
-    
-}
 
-.btn {
-    
-    
-}
+
 
 
 

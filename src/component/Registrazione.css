@@ -1,0 +1,15 @@
+
+.registrazione {
+
+    overflow-x:hidden;
+}
+
+@media screen and (max-width:412px) {
+
+  .registrazione {
+      
+      height:786px;
+  }
+
+
+}

@@ -1,0 +1,14 @@
+
+.App {
+
+   overflow-x: hidden;
+}
+
+
+@media (max-width: 100px) {
+
+     .titolo {
+
+        color:blue;
+     }
+}

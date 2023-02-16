@@ -1,3 +1,4 @@
+import './Registrazione.css'
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import Footer from './Footer'
@@ -170,38 +171,40 @@ function Registrazione() {
           </nav>
               <h1 className="text-center text-danger fs-1 fw-bolder">Registrazione</h1>
 
-           <form className="mx-auto border-info rounded bg-info mb-5 ps-5 pe-5">
+           <form className="mx-auto border-info rounded bg-info w-50 mb-5 mt-5 p-5">
 
-              <div className="row g-3">
 
-                  <div className="col md-6"> 
+              <div className="row">
+
+                <div className="col">
               
-                     <label htmlFor="name" className="form-label text-light g-col-6 fs-5 ">Nome</label>
+                     <label htmlFor="name" className="form-label text-light  fs-5 ">Nome</label>
                      <input type="text" className="form-control" id="name" value={nome}  onChange={(e) => setNome(e.target.value)}/>
                      <p className="card-text text-center fw-bolder text-danger">{message}</p>
                     
-                  </div>
+                </div>
                  
-                  <div className="col md-6">
+                 
+                <div className="col">
 
                      <label htmlFor="surname" className="form-label text-light fs-5">Cognome</label>
                      <input type="text" className="form-control" id="surname" value={cognome} onChange={(e) => setCognome(e.target.value)} />
                      <p className="card-text text-center fw-bolder text-danger">{message2}</p>
+                
                   </div>
-
               </div>
 
-              <div className="row g-3">
+              <div className="row">
 
-                  <div className="col md-6">
+                  <div className="col">
 
-                      <label htmlFor="city" className="form-label text-light g-col-6 fs-5">Citta'</label>
+                      <label htmlFor="city" className="form-label text-light fs-5">Citta'</label>
                       <input type="text" className="form-control" id="city" value={citta} onChange={(e) => setCitta(e.target.value)} />
                       <p className="card-text text-center fw-bolder text-danger">{message3}</p>
 
                    </div> 
 
-                  <div className="col md-6">
+                  <div className="col">
                      <label htmlFor="datadinascita" className="form-label text-light fs-5">Data di nascita</label>
                      <input type="date" className="form-control" id="datadinascita" value={datanascita} onChange={(e) => setDatanascita(e.target.value)}/>
                      <p className="card-text text-center fw-bolder text-danger">{message4}</p>
@@ -210,15 +213,15 @@ function Registrazione() {
                 </div>
                
 
-               <div className="row g-3"> 
+               <div className="row"> 
                 
-                  <div className="col md-6">
+                  <div className="col">
                      <label htmlFor="email" className="form-label text-light fs-5">Email</label>
                      <input type="email" className="form-control" id="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
                      <p className="card-text text-center fw-bolder text-danger">{message5}</p>
                   </div>
 
-                  <div className="col md-6">
+                  <div className="col col-sm col-md">
                      <label htmlFor="email" className="form-label text-light fs-5">Password</label>
                      <input type="password" className="form-control" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                      <p className="card-text text-center fw-bolder text-danger">{message6}</p>
@@ -227,7 +230,7 @@ function Registrazione() {
                </div>
 
                <br />
-               <div className="row g-3">
+               <div className="autorizzazione">
 
                <div className="form-check">
                     <input className="form-check-input" type="checkbox" checked={check} onChange={(e)=> setCheck(e.target.checked)} id="checkbox" />
@@ -240,14 +243,14 @@ function Registrazione() {
                
                <br />
 
-               <div className="row g-3">
+               <div className="text-center">
 
                    <button type="submit" onClick={handleSubmit} className="btn btn-primary fs-4 ">Invia</button>
                    <p className="card-text fw-bolder text-success text-center">{message8}</p>
                    
                </div>
               
-
+              
                </form>
       
               <Footer/>
