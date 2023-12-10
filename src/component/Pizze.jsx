@@ -11,7 +11,7 @@ function Pizze({id,img,nome,prezzo,max, handleDelete}) {
 
     const [count,setCount] = useState(0);
     const [message,setMessage] = useState("");
-    const [descrizione,setDescrizione] = useState([]);
+  
    
 
 
@@ -84,12 +84,7 @@ function Pizze({id,img,nome,prezzo,max, handleDelete}) {
     }
 
 
-    const handleDesc = () => {
 
-         setDescrizione( [...descrizione , {id:descrizione.length + 1,
-                          img : img
-                        }])
-    }
 
   
 
